@@ -129,7 +129,7 @@ public class PoseNetSample : MonoBehaviour
             CrunchiIntervalCounter -=1;
         }
         if(CrunchiIntervalCounter<1){
-            Debug.Log("a");
+            //Debug.Log("a");
             if(ReturnCountCrunchi==1){
                 //肩が上がってるとき
                 if(CrunchiFlag == true){}
