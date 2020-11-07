@@ -22,8 +22,6 @@ public class Animation : MonoBehaviour
 		crunchInstPrefab = (GameObject)Resources.Load("CrunchInstructionTextPrefab");
         squatInstPrefab = (GameObject)Resources.Load("SquatInstructionTextPrefab");
 		content = GameObject.Find("PoseInstructionObject");
-		//GameObject PlankInstructionText = Instantiate(plankInstPrefab, content.transform);
-        //PlankInstructionText.name = "PlankInstructionText";
 	}
 
 	private void anim0(){
@@ -85,5 +83,4 @@ public class Animation : MonoBehaviour
 			animatorTransition.Play("Idle");
 	    }
 	}
-
 }

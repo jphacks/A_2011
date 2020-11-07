@@ -14,10 +14,12 @@ public class WorkOutModeManager : MonoBehaviour
         Debug.Log(Mode);
         if(Mode == 0){
             GameObject CrunchObject = Instantiate(crunchObjectPrefab, content.transform);
+            CrunchObject.transform.localPosition = new Vector3((float)(-230), (float)(-112), (float)(-10));
             CrunchObject.name = "CrunchObject";
             Destroy(GameObject.Find("SquatObject"));
         }else if(Mode == 1){
             GameObject SquatObject = Instantiate(squatObjectPrefab, content.transform);
+            SquatObject.transform.localPosition = new Vector3((float)(-230), (float)(-112), (float)(-10));
             SquatObject.name = "SquatObject";
             Destroy(GameObject.Find("CrunchObject"));
         }
@@ -31,6 +33,10 @@ public class WorkOutModeManager : MonoBehaviour
         content = GameObject.Find("FormTestObject");
         dropdown = GameObject.Find("WorkOutModeDropdown").GetComponent<Dropdown>();
         GameObject CrunchObject = Instantiate(crunchObjectPrefab, content.transform);
+        Debug.Log(CrunchObject.transform.position.x);
+        Debug.Log(CrunchObject.transform.position.y);
+        Debug.Log(CrunchObject.transform.position.z);
+        CrunchObject.transform.localPosition = new Vector3((float)(-230), (float)(-112), (float)(-10));
         CrunchObject.name = "CrunchObject";
         
     }

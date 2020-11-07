@@ -6,10 +6,14 @@ public class MakeTimerRun : MonoBehaviour
 {
     GameObject TimerObject;
     TimerScript timer;
+	public AudioClip beep;
+ 	AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = GameObject.Find("TimerObject").GetComponent<TimerScript>();
+		audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,7 +23,7 @@ public class MakeTimerRun : MonoBehaviour
 			if ( timer.isActivePhase ){
 				if(timer.activeTimeLeft <= 0){
 					//Action of phase changing is written in this section
-					//audioSource.PlayOneShot(beep);
+					audioSource.PlayOneShot(beep);
 					timer.isActivePhase = false;
 					timer.activeTimeLeft = timer.time1;
 					timer.activeTimeText.text = timer.activeTimeLeft.ToString("00");
@@ -40,7 +44,7 @@ public class MakeTimerRun : MonoBehaviour
 			if ( !timer.isActivePhase ){
 				if(timer.intervalTimeLeft <= 0){
 					//Action of phase changing is written in this section
-					//audioSource.PlayOneShot(beep);
+					audioSource.PlayOneShot(beep);
 					timer.isActivePhase = true;
 					--timer.numberOfSetsLeft;
 					timer.intervalTimeLeft = timer.time2;
